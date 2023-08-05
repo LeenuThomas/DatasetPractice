@@ -1,10 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[6]:
-
-
-# Importing
+# Importing libraries
 import sklearn
 import pandas as pd
 import numpy as  np
@@ -19,11 +13,9 @@ from sklearn.datasets import load_boston
 df = pd.read_csv('Iris.csv')
  
 # IQR
-Q1 = np.percentile(df['SepalWidthCm'], 25,
-                interpolation = 'midpoint')
+Q1 = np.percentile(df['SepalWidthCm'], 25, interpolation = 'midpoint')
  
-Q3 = np.percentile(df['SepalWidthCm'], 75,
-                interpolation = 'midpoint')
+Q3 = np.percentile(df['SepalWidthCm'], 75, interpolation = 'midpoint')
 IQR = Q3 - Q1
 
 sns.boxplot(x='SepalWidthCm', data=df)
@@ -41,8 +33,6 @@ df.drop(lower[0], inplace = True)
 
 
 # In[8]:
-
-
 print("New Shape: ", df.shape)
  
 sns.boxplot(x='SepalWidthCm', data=df)
